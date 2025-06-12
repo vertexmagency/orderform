@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vertex Marketing Lead Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Global Body Styles */
+    body {
+      background-color: #183229; /* Dark background color */
+      font-family: 'Montserrat', sans-serif; /* Montserrat font */
+      color: #E1E1E1; /* Light text color for normal text */
+      padding: 20px;
+      margin: 0;
+      line-height: 1.6; /* Improved readability */
+    }
+
+    /* Form Container Styles */
+    form {
+      background-color: #183229; /* Form background is also dark to blend with body */
+      max-width: 700px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Enhanced shadow for depth */
+      position: relative; /* For thank you message positioning */
+    }
+
+    /* Headings within the form */
+    h2, h3 {
+      color: #e5bb28; /* Golden color for titles and subtitles */
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 700; /* Bold */
+    }
+    h3 {
+        font-size: 22px;
+        text-align: left; /* Sub-sections headings align left */
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Labels for form fields */
+    label {
+      display: block; /* Make label appear on its own line */
+      margin: 10px 0 5px; /* Spacing */
+      color: #E1E1E1; /* Label text color */
+      font-weight: 400; /* Regular weight */
+    }
+
+    /* Input fields, select dropdowns, and textareas */
+    input, select, textarea {
+      width: 100%;
+      padding: 12px; /* Increased padding for better touch targets */
+      margin-bottom: 18px; /* Consistent spacing */
+      border: 1px solid #e5bb28; /* Golden border */
+      border-radius: 5px;
+      background-color: #fff; /* Input background */
+      color: #183229; /* Input text color */
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400; /* Regular weight */
+      box-sizing: border-box; /* Include padding/border in width */
+      font-size: 16px; /* Readable font size */
+    }
+    
+    /* Specific style for default/disabled option in select */
+    select option[value=""][disabled] {
+      display: none; /* Hide the "Select one" option after selection */
+    }
+
+    /* Checkbox/Radio button styling for labels */
+    .checkbox-group label {
+        display: inline-block; /* Make labels next to checkboxes */
+        margin-left: 8px; /* Space between checkbox and label */
+        margin-bottom: 5px; /* Space between lines of checkboxes */
+        color: #E1E1E1;
+    }
+    .checkbox-group input[type="checkbox"] {
+        width: auto; /* Checkboxes should not take full width */
+        margin-right: 5px;
+        vertical-align: middle; /* Align checkbox with text */
+    }
+    .checkbox-group {
+        margin-bottom: 15px; /* Spacing for the whole group */
+    }
+
+
+    /* Submit Button */
+    button[type="submit"] {
+      background-color: #e5bb28; /* Golden button background */
+      color: #183229; /* Dark text on button */
+      border: none;
+      padding: 15px 20px; /* More padding */
+      width: 100%;
+      font-size: 18px; /* Larger font size */
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 700; /* Bold text */
+      transition: background-color 0.3s ease; /* Smooth hover effect */
+    }
+    button[type="submit"]:hover {
+      background-color: #d1a51f; /* Slightly darker gold on hover */
+    }
+
+    /* Hidden Sections */
+    .hidden-section {
+      display: none;
+    }
+
+    /* Styles for the section containers */
+    .form-section {
+        border: 1px solid rgba(229, 187, 40, 0.2); /* Light golden border for sections */
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 25px;
+        box-shadow: inset 0 0 5px rgba(229, 187, 40, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+<form id="leadForm" action="https://formsubmit.co/vertexagency8@gmail.com" method="POST">
+  <h2>Vertex Marketing Lead Form</h2>
+  <p style="text-align: center; margin-bottom: 30px; color: #E1E1E1;">Help us understand your needs so we can offer you the best marketing solutions tailored for your business.</p>
+
+  <div class="form-section" id="section1">
+    <h3>Basic Info (Required)</h3>
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" name="Full Name" required>
+
+    <label for="phoneNumber">Phone Number</label>
+    <input type="tel" id="phoneNumber" name="Phone Number" required>
+
+    <label for="emailAddress">Email Address</label>
+    <input type="email" id="emailAddress" name="Email Address" required>
+
+    <label for="businessName">Business Name (Optional)</label>
+    <input type="text" id="businessName" name="Business Name">
+  </div>
+
+  <div class="form-section" id="section2">
+    <h3>What do you need help with? (Required)</h3>
+    <label for="serviceHelpType">What do you need help with?</label>
+    <select name="Help Type" id="serviceHelpType" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="Full Marketing">Full Marketing for my business</option>
+      <option value="Specific Service">Specific service (e.g. Video Editing, Graphic Design…)</option>
+      <option value="Marketing Consultation">Marketing Consultation</option>
+    </select>
+  </div>
+
+  <div class="form-section hidden-section" id="section3A">
+    <h3>Full Marketing Details</h3>
+    <label for="businessType">What type of business do you have?</label>
+    <input type="text" id="businessType" name="Business Type"> 
+
+    <label for="productServiceSalesType">Do you sell Products, Services, or both?</label>
+    <select id="productServiceSalesType" name="Product/Service Sales Type">
+      <option value="" disabled selected>Select one</option>
+      <option value="Products">Products</option>
+      <option value="Services">Services</option>
+      <option value="Both">Both</option>
+    </select>
+
+    <label for="targetAudience">Who is your target audience?</label>
+    <textarea id="targetAudience" name="Target Audience" rows="3"></textarea>
+
+    <label for="monthlyBudget">What is your average monthly marketing budget?</label>
+    <select id="monthlyBudget" name="Monthly Marketing Budget">
+      <option value="" disabled selected>Select a range</option>
+      <option value="< 5k EGP">&lt; 5k EGP</option>
+      <option value="5k - 10k EGP">5k – 10k EGP</option>
+      <option value="10k - 20k EGP">10k – 20k EGP</option>
+      <option value="20k+ EGP">20k+ EGP</option>
+    </select>
+
+    <label>Which platforms are you active on?</label>
+    <div class="checkbox-group">
+        <input type="checkbox" id="platformFacebook" name="Platforms[]" value="Facebook"> <label for="platformFacebook">Facebook</label><br>
+        <input type="checkbox" id="platformInstagram" name="Platforms[]" value="Instagram"> <label for="platformInstagram">Instagram</label><br>
+        <input type="checkbox" id="platformTikTok" name="Platforms[]" value="TikTok"> <label for="platformTikTok">TikTok</label><br>
+        <input type="checkbox" id="platformWhatsApp" name="Platforms[]" value="WhatsApp"> <label for="platformWhatsApp">WhatsApp</label><br>
+        <input type="checkbox" id="platformGoogle" name="Platforms[]" value="Google"> <label for="platformGoogle">Google</label><br>
+        <input type="checkbox" id="platformOther" name="Platforms[]" value="Other"> <label for="platformOther">Other</label>
+    </div>
+
+    <label for="existingBranding">Do you have existing branding materials?</label>
+    <select id="existingBranding" name="Existing Branding">
+      <option value="" disabled selected>Select one</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="Need help">Need help</option>
+    </select>
+
+    <label for="mainMarketingGoals">What are your main marketing goals?</label>
+    <textarea id="mainMarketingGoals" name="Main Marketing Goals" rows="3"></textarea>
+
+    <label for="challenges">What challenges are you facing in marketing?</label>
+    <textarea id="challenges" name="Marketing Challenges" rows="3"></textarea>
+  </div>
+
+  <div class="form-section hidden-section" id="section3B">
+    <h3>Specific Service Details</h3>
+    <label>Which service do you need?</label>
+    <div class="checkbox-group">
+        <input type="checkbox" id="serviceVideo" name="Specific Service[]" value="Video Editing"> <label for="serviceVideo">Video Editing</label><br>
+        <input type="checkbox" id="serviceMotion" name="Specific Service[]" value="Motion Graphics"> <label for="serviceMotion">Motion Graphics</label><br>
+        <input type="checkbox" id="serviceGraphic" name="Specific Service[]" value="Graphic Design"> <label for="serviceGraphic">Graphic Design</label><br>
+        <input type="checkbox" id="serviceVoice" name="Specific Service[]" value="Voice Over"> <label for="serviceVoice">Voice Over</label><br>
+        <input type="checkbox" id="serviceContent" name="Specific Service[]" value="Content Creation"> <label for="serviceContent">Content Creation</label><br>
+        <input type="checkbox" id="serviceMedia" name="Specific Service[]" value="Media Buying"> <label for="serviceMedia">Media Buying</label><br>
+        <input type="checkbox" id="serviceSMM" name="Specific Service[]" value="Social Media Management"> <label for="serviceSMM">Social Media Management</label>
+    </div>
+
+    <label for="expectations">What do you expect from us in this service?</label>
+    <textarea id="expectations" name="Service Expectations" rows="3"></textarea>
+
+    <label for="deadline">Deadline or expected delivery date?</label>
+    <input type="text" id="deadline" name="Deadline">
+  </div>
+
+  <div class="form-section hidden-section" id="section3C">
+    <h3>Consultation Details</h3>
+    <label for="consultationProblems">What problems are you facing in your business or marketing?</label>
+    <textarea id="consultationProblems" name="Consultation Problems" rows="3"></textarea>
+
+    <label for="consultationExpectations">What do you expect from the consultation?</label>
+    <textarea id="consultationExpectations" name="Consultation Expectations" rows="3"></textarea>
+  </div>
+
+  <div class="form-section" id="section4">
+    <h3>Final Step</h3>
+    <label for="startDate">When would you like us to start?</label>
+    <input type="text" id="startDate" name="Start Date">
+
+    <label for="notes">Any additional notes or questions?</label>
+    <textarea id="notes" name="Additional Notes" rows="3"></textarea>
+  </div>
+
+  <input type="text" name="_honey" style="display:none"> <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> 
+  <input type="hidden" name="_captcha" value="false"> <button type="submit">Send Request</button>
+</form>
+
+<script>
+  // This script handles the conditional display of sections.
+  // Submission is handled directly by the <form action="https://formsubmit.co/...">
+
+  const serviceHelpTypeSelect = document.getElementById('serviceHelpType');
+  const section3A = document.getElementById('section3A');
+  const section3B = document.getElementById('section3B');
+  const section3C = document.getElementById('section3C');
+  const section4 = document.getElementById('section4');
+  
+  // --- Initial Setup and Conditional Logic ---
+  function toggleSections() {
+    const selectedService = serviceHelpTypeSelect.value;
+
+    // Hide all conditional sections
+    section3A.style.display = "none";
+    section3B.style.display = "none";
+    section3C.style.display = "none";
+
+    // Show only the relevant section based on selection
+    if (selectedService === "Full Marketing") {
+      section3A.style.display = "block";
+    } else if (selectedService === "Specific Service") {
+      section3B.style.display = "block";
+    } else if (selectedService === "Marketing Consultation") {
+      section3C.style.display = "block";
+    }
+
+    // Show Section 4 (Final Step) if any service type is selected, otherwise hide it
+    if (selectedService !== "") {
+        section4.style.display = "block";
+    } else {
+        section4.style.display = "none";
+    }
+  }
+
+  // Add event listener for when the service type dropdown changes
+  serviceHelpTypeSelect.addEventListener('change', toggleSections);
+
+  // Initial call to hide sections and hide final step when page loads
+  document.addEventListener('DOMContentLoaded', () => {
+    // Hide all conditional sections initially
+    section3A.style.display = "none";
+    section3B.style.display = "none";
+    section3C.style.display = "none";
+    section4.style.display = "none"; // Hide final step initially
+
+    // Reset the main service type dropdown to its default 'Select one' on page load
+    serviceHelpTypeSelect.value = ""; 
+  });
+
+</script>
+
+</body>
+</html>
