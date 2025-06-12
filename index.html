@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vertex Marketing Lead Form - Basic</title>
+  <title>Vertex Marketing Lead Form</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
   <style>
     /* Basic Body Styles - Minimal Design */
@@ -11,8 +11,8 @@
       background-color: #183229; /* Dark background */
       font-family: 'Montserrat', sans-serif;
       color: #E1E1E1; /* Light text color */
-      margin: 0;
       padding: 20px;
+      margin: 0;
       line-height: 1.6;
     }
 
@@ -146,3 +146,155 @@
     <h3>What do you need help with? (Required)</h3>
     <label for="serviceHelpType">What do you need help with?</label>
     <select name="Help Type" id="serviceHelpType" required>
+      <option value="" disabled selected>Select one</option>
+      <option value="Full Marketing">Full Marketing for my business</option>
+      <option value="Specific Service">Specific service (e.g. Video Editing, Graphic Design…)</option>
+      <option value="Marketing Consultation">Marketing Consultation</option>
+    </select>
+  </div>
+
+  <div class="form-section hidden-section" id="section3A">
+    <h3>Full Marketing Details</h3>
+    <label for="businessType">What type of business do you have?</label>
+    <input type="text" id="businessType" name="Business Type" placeholder="e.g., E-commerce, Real Estate, Service Provider">
+
+    <label for="productServiceSalesType">Do you sell Products, Services, or both?</label>
+    <select id="productServiceSalesType" name="Product/Service Sales Type">
+      <option value="" disabled selected>Select one</option>
+      <option value="Products">Products</option>
+      <option value="Services">Services</option>
+      <option value="Both">Both</option>
+    </select>
+
+    <label for="targetAudience">Who is your target audience?</label>
+    <textarea id="targetAudience" name="Target Audience" rows="3" placeholder="Describe your ideal customers (demographics, interests, pain points)"></textarea>
+
+    <label for="monthlyBudget">What is your average monthly marketing budget?</label>
+    <select id="monthlyBudget" name="Monthly Marketing Budget">
+      <option value="" disabled selected>Select a range</option>
+      <option value="< 5k EGP">&lt; 5k EGP</option>
+      <option value="5k - 10k EGP">5k – 10k EGP</option>
+      <option value="10k - 20k EGP">10k – 20k EGP</option>
+      <option value="20k+ EGP">20k+ EGP</option>
+    </select>
+
+    <label>Which platforms are you active on?</label>
+    <div class="checkbox-group">
+        <div><input type="checkbox" id="platformFacebook" name="Platforms[]" value="Facebook"> <label for="platformFacebook">Facebook</label></div>
+        <div><input type="checkbox" id="platformInstagram" name="Platforms[]" value="Instagram"> <label for="platformInstagram">Instagram</label></div>
+        <div><input type="checkbox" id="platformTikTok" name="Platforms[]" value="TikTok"> <label for="platformTikTok">TikTok</label></div>
+        <div><input type="checkbox" id="platformWhatsApp" name="Platforms[]" value="WhatsApp"> <label for="platformWhatsApp">WhatsApp</label></div>
+        <div><input type="checkbox" id="platformGoogle" name="Platforms[]" value="Google"> <label for="platformGoogle">Google</label></div>
+        <div><input type="checkbox" id="platformOther" name="Platforms[]" value="Other"> <label for="platformOther">Other</label></div>
+    </div>
+
+    <label for="existingBranding">Do you have existing branding materials?</label>
+    <select id="existingBranding" name="Existing Branding">
+      <option value="" disabled selected>Select one</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="Need help">Need help</option>
+    </select>
+
+    <label for="mainMarketingGoals">What are your main marketing goals?</label>
+    <textarea id="mainMarketingGoals" name="Main Marketing Goals" rows="3" placeholder="e.g., Increase sales, build brand awareness, generate leads"></textarea>
+
+    <label for="challenges">What challenges are you facing in marketing?</label>
+    <textarea id="challenges" name="Marketing Challenges" rows="3" placeholder="Describe any obstacles or difficulties"></textarea>
+  </div>
+
+  <div class="form-section hidden-section" id="section3B">
+    <h3>Specific Service Details</h3>
+    <label>Which service do you need?</label>
+    <div class="checkbox-group">
+        <div><input type="checkbox" id="serviceVideo" name="Specific Service[]" value="Video Editing"> <label for="serviceVideo">Video Editing</label></div>
+        <div><input type="checkbox" id="serviceMotion" name="Specific Service[]" value="Motion Graphics"> <label for="serviceMotion">Motion Graphics</label></div>
+        <div><input type="checkbox" id="serviceGraphic" name="Specific Service[]" value="Graphic Design"> <label for="serviceGraphic">Graphic Design</label></div>
+        <div><input type="checkbox" id="serviceVoice" name="Specific Service[]" value="Voice Over"> <label for="serviceVoice">Voice Over</label></div>
+        <div><input type="checkbox" id="serviceContent" name="Content Creation"> <label for="serviceContent">Content Creation</label></div>
+        <div><input type="checkbox" id="serviceMedia" name="Media Buying"> <label for="serviceMedia">Media Buying</label></div>
+        <div><input type="checkbox" id="serviceSMM" name="Social Media Management"> <label for="serviceSMM">Social Media Management</label></div>
+    </div>
+
+    <label for="projectDetailsSpecific">Please describe your project details for the selected service(s).</label>
+    <textarea id="projectDetailsSpecific" name="Project Details Specific Service" rows="5" placeholder="Tell us about the scope, specific requirements, desired style, or any existing materials."></textarea>
+
+  </div>
+
+  <div class="form-section hidden-section" id="section3C">
+    <h3>Consultation Details</h3>
+    <label for="consultationProblems">What problems are you facing in your business or marketing?</label>
+    <textarea id="consultationProblems" name="Consultation Problems" rows="3" placeholder="e.g., Low sales, poor engagement, unclear brand message"></textarea>
+
+    <label for="consultationExpectations">What do you expect from the consultation?</label>
+    <textarea id="consultationExpectations" name="Consultation Expectations" rows="3" placeholder="e.g., A clear strategy, specific recommendations, problem identification"></textarea>
+  </div>
+
+  <div class="form-section" id="section4">
+    <h3>Final Step</h3>
+    <label for="bestContactTime">When is the best time to contact you?</label>
+    <input type="text" id="bestContactTime" name="Best Contact Time" placeholder="e.g., During business hours, After 6 PM, Specific day/time">
+
+    <label for="notes">Any additional notes or questions?</label>
+    <textarea id="notes" name="Additional Notes" rows="3" placeholder="Any other information you'd like to share"></textarea>
+  </div>
+
+  <input type="text" name="_honey" style="display:none"> <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> 
+  <input type="hidden" name="_captcha" value="false"> <button type="submit">Send Request</button>
+</form>
+
+<script>
+  // This script handles the conditional display of sections.
+  // Submission is handled directly by the <form action="https://formsubmit.co/...">
+
+  const serviceHelpTypeSelect = document.getElementById('serviceHelpType');
+  const section3A = document.getElementById('section3A');
+  const section3B = document.getElementById('section3B');
+  const section3C = document.getElementById('section3C');
+  const section4 = document.getElementById('section4');
+  
+  // --- Initial Setup and Conditional Logic ---
+  function toggleSections() {
+    const selectedService = serviceHelpTypeSelect.value;
+
+    // Hide all conditional sections
+    section3A.style.display = "none";
+    section3B.style.display = "none";
+    section3C.style.display = "none";
+
+    // Show only the relevant section based on selection
+    if (selectedService === "Full Marketing") {
+      section3A.style.display = "block";
+    } else if (selectedService === "Specific Service") {
+      section3B.style.display = "block";
+    } else if (selectedService === "Marketing Consultation") {
+      section3C.style.display = "block";
+    }
+
+    // Show Section 4 (Final Step) if any service type is selected, otherwise hide it
+    if (selectedService !== "") {
+        section4.style.display = "block";
+    } else {
+        section4.style.display = "none";
+    }
+  }
+
+  // Add event listener for when the service type dropdown changes
+  serviceHelpTypeSelect.addEventListener('change', toggleSections);
+
+  // Initial call to hide sections and hide final step when page loads
+  document.addEventListener('DOMContentLoaded', () => {
+    // Hide all conditional sections initially
+    section3A.style.display = "none";
+    section3B.style.display = "none";
+    section3C.style.display = "none";
+    section4.style.display = "none"; // Hide final step initially
+
+    // Reset the main service type dropdown to its default 'Select one' on page load
+    serviceHelpTypeSelect.value = ""; 
+  });
+
+</script>
+
+</body>
+</html>
