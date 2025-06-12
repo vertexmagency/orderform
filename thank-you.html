@@ -59,26 +59,30 @@
             color: #E1E1E1;
         }
 
-        .contact-info ul {
+        .contact-info .social-list,
+        .contact-info .direct-contact {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin: 0 auto; /* Center the list */
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px; /* Space between items */
+            max-width: 400px; /* Limit width for better appearance */
         }
 
         .contact-info ul li {
             font-size: 1em;
             color: #E1E1E1;
             text-align: center;
+            flex-basis: auto; /* Allow items to size naturally */
         }
 
         .contact-info ul li a {
             color: #e5bb28; /* Golden link color */
             text-decoration: none;
             font-weight: 700;
+            white-space: nowrap; /* Prevent wrapping for social names */
         }
 
         .contact-info ul li a:hover {
@@ -110,12 +114,16 @@
         <p>Our team will review your details and contact you shortly. You can expect to hear from us within <span class="highlight-text">24-48 business hours</span>.</p>
         
         <div class="contact-info">
-            <p>In the meantime, you can connect with us directly:</p>
-            <ul>
-                <li>**WhatsApp:** <a href="https://wa.me/201002019133" target="_blank">+20 100 201 9133</a></li>
-                <li>**Instagram:** <a href="https://www.instagram.com/vertexmagency" target="_blank">@vertexmagency</a></li>
-                <li>**Facebook:** <a href="https://www.facebook.com/share/16S2ERMu9h/" target="_blank">Vertex Agency</a></li>
-                <li>**TikTok:** <a href="https://www.tiktok.com/@vertexmagency" target="_blank">@vertexmagency</a></li>
+            <p>You can follow us on:</p>
+            <ul class="social-list">
+                <li><a href="https://www.instagram.com/vertexmagency" target="_blank">@vertexmagency (Instagram)</a></li>
+                <li><a href="https://www.facebook.com/share/16S2ERMu9h/" target="_blank">Vertex Agency (Facebook)</a></li>
+                <li><a href="https://www.tiktok.com/@vertexmagency" target="_blank">@vertexmagency (TikTok)</a></li>
+            </ul>
+
+            <p style="margin-top: 25px;">Contact us directly via WhatsApp:</p>
+            <ul class="direct-contact">
+                <li><a href="https://wa.me/201002019133" target="_blank">+20 100 201 9133</a></li>
             </ul>
         </div>
     </div>
