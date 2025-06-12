@@ -133,7 +133,7 @@
     <input type="text" id="fullName" name="Full Name" required placeholder="Your full name">
 
     <label for="phoneNumber">Phone Number *</label>
-    <input type="tel" id="phoneNumber" name="Phone Number" required placeholder="e.g., +201001234567">
+    <input type="tel" id="phoneNumber" name="Phone Number" required placeholder="e.g., +2010012170041">
 
     <label for="emailAddress">Email Address *</label>
     <input type="email" id="emailAddress" name="Email Address" required placeholder="your@email.com">
@@ -210,14 +210,14 @@
         <div><input type="checkbox" id="serviceVideo" name="Specific Service[]" value="Video Editing"> <label for="serviceVideo">Video Editing</label></div>
         <div><input type="checkbox" id="serviceMotion" name="Specific Service[]" value="Motion Graphics"> <label for="serviceMotion">Motion Graphics</label></div>
         <div><input type="checkbox" id="serviceGraphic" name="Specific Service[]" value="Graphic Design"> <label for="serviceGraphic">Graphic Design</label></div>
-        <div><input type="checkbox" id="serviceVoice" name="Voice Over"> <label for="serviceVoice">Voice Over</label></div>
-        <div><input type="checkbox" id="serviceContent" name="Content Creation"> <label for="serviceContent">Content Creation</label></div>
+        <div><input type="checkbox" id="serviceVoice" name="Specific Service[]" value="Voice Over"> <label for="serviceVoice">Voice Over</label></div>
+        <div><input type="checkbox" id="serviceContent" name="Specific Service[]" value="Content Creation"> <label for="serviceContent">Content Creation</label></div>
         <div><input type="checkbox" id="serviceMedia" name="Media Buying"> <label for="serviceMedia">Media Buying</label></div>
-        <div><input type="checkbox" id="serviceSMM" name="Social Media Management"> <label for="serviceSMM">Social Media Management</label></div>
+        <div><input type="checkbox" id="serviceSMM" name="Specific Service[]" value="Social Media Management"> <label for="serviceSMM">Social Media Management</label></div>
     </div>
 
-    <label for="expectations">What do you expect from us in this service?</label>
-    <textarea id="expectations" name="Service Expectations" rows="3" placeholder="Tell us about the scope, specific requirements, desired style, or any existing materials."></textarea>
+    <label for="projectDetailsSpecific">Please describe your project details for the selected service(s).</label>
+    <textarea id="projectDetailsSpecific" name="Project Details Specific Service" rows="5" placeholder="Tell us about the scope, specific requirements, desired style, or any existing materials."></textarea>
 
   </div>
 
@@ -288,4 +288,13 @@
     section3A.style.display = "none";
     section3B.style.display = "none";
     section3C.style.display = "none";
-    section4.style
+    section4.style.display = "none"; // Hide final step initially
+
+    // Reset the main service type dropdown to its default 'Select one' on page load
+    serviceHelpTypeSelect.value = ""; 
+  });
+
+</script>
+
+</body>
+</html>
