@@ -70,19 +70,25 @@
     }
 
     /* Checkbox/Radio button styling for labels */
-    .checkbox-group label {
-        display: inline-block; /* Make labels next to checkboxes */
-        margin-left: 8px; /* Space between checkbox and label */
-        margin-bottom: 5px; /* Space between lines of checkboxes */
-        color: #E1E1E1;
+    .checkbox-group {
+        margin-bottom: 15px; /* Spacing for the whole group */
+    }
+    .checkbox-group div { /* Container for each checkbox and label */
+        display: flex; /* Use flexbox for alignment */
+        align-items: center; /* Vertically center items */
+        margin-bottom: 5px; /* Space between each checkbox row */
     }
     .checkbox-group input[type="checkbox"] {
         width: auto; /* Checkboxes should not take full width */
-        margin-right: 5px;
+        margin-right: 8px; /* Space between checkbox and label */
+        margin-bottom: 0; /* Reset margin bottom for individual checkbox input */
         vertical-align: middle; /* Align checkbox with text */
     }
-    .checkbox-group {
-        margin-bottom: 15px; /* Spacing for the whole group */
+    .checkbox-group label[for] { /* Target the actual label element */
+        margin-bottom: 0; /* Remove bottom margin from label */
+        color: #E1E1E1;
+        font-weight: 400;
+        display: inline-block; /* Keep it inline within flex item */
     }
 
 
@@ -126,17 +132,17 @@
 
   <div class="form-section" id="section1">
     <h3>Basic Info (Required)</h3>
-    <label for="fullName">Full Name</label>
-    <input type="text" id="fullName" name="Full Name" required>
+    <label for="fullName">Full Name *</label>
+    <input type="text" id="fullName" name="Full Name" required placeholder="Your full name">
 
-    <label for="phoneNumber">Phone Number</label>
-    <input type="tel" id="phoneNumber" name="Phone Number" required>
+    <label for="phoneNumber">Phone Number *</label>
+    <input type="tel" id="phoneNumber" name="Phone Number" required placeholder="e.g., +201001234567">
 
-    <label for="emailAddress">Email Address</label>
-    <input type="email" id="emailAddress" name="Email Address" required>
+    <label for="emailAddress">Email Address *</label>
+    <input type="email" id="emailAddress" name="Email Address" required placeholder="your@email.com">
 
     <label for="businessName">Business Name (Optional)</label>
-    <input type="text" id="businessName" name="Business Name">
+    <input type="text" id="businessName" name="Business Name" placeholder="If applicable">
   </div>
 
   <div class="form-section" id="section2">
@@ -153,7 +159,7 @@
   <div class="form-section hidden-section" id="section3A">
     <h3>Full Marketing Details</h3>
     <label for="businessType">What type of business do you have?</label>
-    <input type="text" id="businessType" name="Business Type"> 
+    <input type="text" id="businessType" name="Business Type" placeholder="e.g., E-commerce, Real Estate, Service Provider">
 
     <label for="productServiceSalesType">Do you sell Products, Services, or both?</label>
     <select id="productServiceSalesType" name="Product/Service Sales Type">
@@ -164,7 +170,7 @@
     </select>
 
     <label for="targetAudience">Who is your target audience?</label>
-    <textarea id="targetAudience" name="Target Audience" rows="3"></textarea>
+    <textarea id="targetAudience" name="Target Audience" rows="3" placeholder="Describe your ideal customers (demographics, interests, pain points)"></textarea>
 
     <label for="monthlyBudget">What is your average monthly marketing budget?</label>
     <select id="monthlyBudget" name="Monthly Marketing Budget">
@@ -177,12 +183,12 @@
 
     <label>Which platforms are you active on?</label>
     <div class="checkbox-group">
-        <input type="checkbox" id="platformFacebook" name="Platforms[]" value="Facebook"> <label for="platformFacebook">Facebook</label><br>
-        <input type="checkbox" id="platformInstagram" name="Platforms[]" value="Instagram"> <label for="platformInstagram">Instagram</label><br>
-        <input type="checkbox" id="platformTikTok" name="Platforms[]" value="TikTok"> <label for="platformTikTok">TikTok</label><br>
-        <input type="checkbox" id="platformWhatsApp" name="Platforms[]" value="WhatsApp"> <label for="platformWhatsApp">WhatsApp</label><br>
-        <input type="checkbox" id="platformGoogle" name="Platforms[]" value="Google"> <label for="platformGoogle">Google</label><br>
-        <input type="checkbox" id="platformOther" name="Platforms[]" value="Other"> <label for="platformOther">Other</label>
+        <div><input type="checkbox" id="platformFacebook" name="Platforms[]" value="Facebook"> <label for="platformFacebook">Facebook</label></div>
+        <div><input type="checkbox" id="platformInstagram" name="Platforms[]" value="Instagram"> <label for="platformInstagram">Instagram</label></div>
+        <div><input type="checkbox" id="platformTikTok" name="Platforms[]" value="TikTok"> <label for="platformTikTok">TikTok</label></div>
+        <div><input type="checkbox" id="platformWhatsApp" name="Platforms[]" value="WhatsApp"> <label for="platformWhatsApp">WhatsApp</label></div>
+        <div><input type="checkbox" id="platformGoogle" name="Platforms[]" value="Google"> <label for="platformGoogle">Google</label></div>
+        <div><input type="checkbox" id="platformOther" name="Platforms[]" value="Other"> <label for="platformOther">Other</label></div>
     </div>
 
     <label for="existingBranding">Do you have existing branding materials?</label>
@@ -194,48 +200,46 @@
     </select>
 
     <label for="mainMarketingGoals">What are your main marketing goals?</label>
-    <textarea id="mainMarketingGoals" name="Main Marketing Goals" rows="3"></textarea>
+    <textarea id="mainMarketingGoals" name="Main Marketing Goals" rows="3" placeholder="e.g., Increase sales, build brand awareness, generate leads"></textarea>
 
     <label for="challenges">What challenges are you facing in marketing?</label>
-    <textarea id="challenges" name="Marketing Challenges" rows="3"></textarea>
+    <textarea id="challenges" name="Marketing Challenges" rows="3" placeholder="Describe any obstacles or difficulties"></textarea>
   </div>
 
   <div class="form-section hidden-section" id="section3B">
     <h3>Specific Service Details</h3>
     <label>Which service do you need?</label>
     <div class="checkbox-group">
-        <input type="checkbox" id="serviceVideo" name="Specific Service[]" value="Video Editing"> <label for="serviceVideo">Video Editing</label><br>
-        <input type="checkbox" id="serviceMotion" name="Specific Service[]" value="Motion Graphics"> <label for="serviceMotion">Motion Graphics</label><br>
-        <input type="checkbox" id="serviceGraphic" name="Specific Service[]" value="Graphic Design"> <label for="serviceGraphic">Graphic Design</label><br>
-        <input type="checkbox" id="serviceVoice" name="Specific Service[]" value="Voice Over"> <label for="serviceVoice">Voice Over</label><br>
-        <input type="checkbox" id="serviceContent" name="Specific Service[]" value="Content Creation"> <label for="serviceContent">Content Creation</label><br>
-        <input type="checkbox" id="serviceMedia" name="Specific Service[]" value="Media Buying"> <label for="serviceMedia">Media Buying</label><br>
-        <input type="checkbox" id="serviceSMM" name="Specific Service[]" value="Social Media Management"> <label for="serviceSMM">Social Media Management</label>
+        <div><input type="checkbox" id="serviceVideo" name="Specific Service[]" value="Video Editing"> <label for="serviceVideo">Video Editing</label></div>
+        <div><input type="checkbox" id="serviceMotion" name="Specific Service[]" value="Motion Graphics"> <label for="serviceMotion">Motion Graphics</label></div>
+        <div><input type="checkbox" id="serviceGraphic" name="Specific Service[]" value="Graphic Design"> <label for="serviceGraphic">Graphic Design</label></div>
+        <div><input type="checkbox" id="serviceVoice" name="Specific Service[]" value="Voice Over"> <label for="serviceVoice">Voice Over</label></div>
+        <div><input type="checkbox" id="serviceContent" name="Specific Service[]" value="Content Creation"> <label for="serviceContent">Content Creation</label></div>
+        <div><input type="checkbox" id="serviceMedia" name="Specific Service[]" value="Media Buying"> <label for="serviceMedia">Media Buying</label></div>
+        <div><input type="checkbox" id="serviceSMM" name="Specific Service[]" value="Social Media Management"> <label for="serviceSMM">Social Media Management</label></div>
     </div>
 
-    <label for="expectations">What do you expect from us in this service?</label>
-    <textarea id="expectations" name="Service Expectations" rows="3"></textarea>
+    <label for="projectDetailsSpecific">Please describe your project details for the selected service(s).</label>
+    <textarea id="projectDetailsSpecific" name="Project Details Specific Service" rows="5" placeholder="Tell us about the scope, specific requirements, desired style, or any existing materials."></textarea>
 
-    <label for="deadline">Deadline or expected delivery date?</label>
-    <input type="text" id="deadline" name="Deadline">
-  </div>
+    </div>
 
   <div class="form-section hidden-section" id="section3C">
     <h3>Consultation Details</h3>
     <label for="consultationProblems">What problems are you facing in your business or marketing?</label>
-    <textarea id="consultationProblems" name="Consultation Problems" rows="3"></textarea>
+    <textarea id="consultationProblems" name="Consultation Problems" rows="3" placeholder="e.g., Low sales, poor engagement, unclear brand message"></textarea>
 
     <label for="consultationExpectations">What do you expect from the consultation?</label>
-    <textarea id="consultationExpectations" name="Consultation Expectations" rows="3"></textarea>
+    <textarea id="consultationExpectations" name="Consultation Expectations" rows="3" placeholder="e.g., A clear strategy, specific recommendations, problem identification"></textarea>
   </div>
 
   <div class="form-section" id="section4">
     <h3>Final Step</h3>
     <label for="startDate">When would you like us to start?</label>
-    <input type="text" id="startDate" name="Start Date">
+    <input type="text" id="startDate" name="Start Date" placeholder="e.g., Immediately, Next month, Specific date">
 
     <label for="notes">Any additional notes or questions?</label>
-    <textarea id="notes" name="Additional Notes" rows="3"></textarea>
+    <textarea id="notes" name="Additional Notes" rows="3" placeholder="Any other information you'd like to share"></textarea>
   </div>
 
   <input type="text" name="_honey" style="display:none"> <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> 
